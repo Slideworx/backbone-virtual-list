@@ -1,0 +1,63 @@
+scss_files: 'sass/**/*.scss'
+
+exclude: 'sass/_bootstrap*.scss'
+
+linters:
+  Compass::*:
+    enabled: false
+
+  SelectorFormat:
+    enabled: true
+    convention: strict_BEM
+
+  NameFormat:
+    enabled: true
+    convention: '^([0-9a-z]+-?[0-9a-z]+)+(__[0-9a-z\-]+)?(--[0-9a-z\-]+)*$'
+    convention_explanation: 'Name should follow BEM formating with lowercase letters'
+
+  QualifyingElement:
+    enabled: false
+
+  BemDepth:
+    enabled: true
+    max_elements: 2
+
+  BorderZero:
+    enabled: true
+
+  DuplicateProperty:
+    enabled: true
+
+  ImportPath:
+    enabled: true
+
+  IdSelector:
+    enabled: true
+
+  Indentation:
+    enabled: true
+
+  LeadingZero:
+    enabled: true
+    style: exclude_zero
+
+  MergeableSelector:
+    enabled: true
+
+  PropertySpelling:
+    enabled: true
+
+  PropertySortOrder:
+    enabled: false
+
+  SingleLinePerProperty:
+    enabled: true
+
+  SingleLinePerSelector:
+    enabled: true
+
+  SpaceAfterComma:
+    enabled: true
+
+  SpaceAfterPropertyColon:
+    enabled: true

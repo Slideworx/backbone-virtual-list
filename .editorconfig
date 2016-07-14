@@ -1,0 +1,29 @@
+# Automatically configures IDE with general rules like indent size and type etc.
+# You can install addon for your IDE. All links for plugins are on http://editorconfig.org/#download
+#
+# Most popular editors:
+# ATOM: https://github.com/sindresorhus/atom-editorconfig#readme
+# NotePad++: https://github.com/editorconfig/editorconfig-notepad-plus-plus#readme
+# Sublime Text: https://github.com/sindresorhus/editorconfig-sublime#readme
+# Visual Studio: https://github.com/editorconfig/editorconfig-visualstudio#readme
+# VIM: https://github.com/editorconfig/editorconfig-vim#readme
+
+# top-most EditorConfig file
+root = true
+
+# Matches multiple files with brace expansion notation
+# Set default charset
+
+# Indentation override for all JS under lib directory
+[**.js]
+indent_style = space
+indent_size = 2
+charset = utf-8
+insert_final_newline = true
+max_line_length = 120
+quote_type = single
+curly_bracket_next_line = false
+
+[**.scss]
+indent_style = space
+indent_size = 2
