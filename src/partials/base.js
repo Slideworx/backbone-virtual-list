@@ -1,19 +1,20 @@
 var Backbone = require('backbone');
 var ItemViewCache = require('../utils/viewCache');
+var setOption = require('../utils/setOption');
 
 module.exports = {
 
-  /* Required in extend.
+  /* Can be set in extend or passed in options.
    * This is the height of the itemView.
    */
   itemHeight: 30,
 
-  /* Required in extend.
+  /* Can be set in extend or passed in options.
    * This can be changed during view lifespan with method virtualSetHeight.
    */
   listHeight: 300,
 
-  /* Required in extend.
+  /* Can be set in extend or passed in options.
    * This should be a Backbone View for a model.
    */
   itemView: null,
@@ -33,7 +34,11 @@ module.exports = {
    *
    * Prepares cache, default values, sets up listeners.
    */
-  initialize: function() {
+  initialize: function(options) {
+    setOption(this, options, 'itemHeight');
+    setOption(this, options, 'listHeight');
+    setOption(this, options, 'itemView');
+
     this.__firstVisibleIndex = 0;
     this.__cache = new ItemViewCache();
     this.__expander = null;

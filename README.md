@@ -7,8 +7,27 @@ The list will automatically update on item add/remove/reset/sort.
 ## Build
 Run `npm run build:production` to build production version.
 
-## Example of use
-To use the view, extend it with Your settings, as in example below.
+## Example of usage
+You can create an instance of VirtualList:
+
+```javascript
+  var instance = new VirtualList({
+    /* View used to render single item in the list */
+    itemView: ItemView,
+
+    /* Total height of a single row */
+    itemHeight: 34,
+
+    /* Total height of visible area */
+    listHeight: 300,
+
+    /* Collection of models that will be rendered. */
+    collection: collection
+  });
+```
+
+## Example of extending
+You can extend VirtualList with Your settings, as in example below.
 
 ```javascript
   var MyVirtualList = VirutalList.extend({
@@ -20,7 +39,7 @@ To use the view, extend it with Your settings, as in example below.
 
     /* Total height of visible area */
     listHeight: 300,
-  })
+  });
 ```
 
 Next, create instance of Your extended view. In view options, pass a collection of models, that will be use to render itemViews.
@@ -32,7 +51,7 @@ instance.appendTo(this.$el);
 
 ## Usage with filters
 The list will refresh when the collection will be reseted, sorted, items are added or removed.
-However, list will display all the items in collection, so marking them with some don't display marker.
+However, list will display all the items in collection, so marking them with some attribute will not work.
 You need some cache (for example another collection) that will have all the items, and the collection passed to list will reset on filter with only filtered items.
 
 
@@ -51,6 +70,10 @@ Methods `virtualExpanderSet`, `virtualExpanderSync`, `virtualExpanderRemove`,  `
 `virtualGetView` is method used to generate the itemView for the model. You can overwrite it to provide custom logic, however keep in mind that it's fired for every visible model and should add the view to cache.
 
 ## Release History
+
+### 2.1.0 (07.11.2016)
+* Virtual list now accepts `itemView`, `itemHeight` and `listHeight` parameters in options.
+* Virtual list now can be instantiated without extending.
 
 ### 2.0.0 (07.11.2016)
 * code split into smaller files,
