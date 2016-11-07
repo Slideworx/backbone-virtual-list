@@ -1,18 +1,22 @@
 {
   "name": "backbone-virtual-list",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Backbone Virtual List Component",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:dist",
-    "build:dist": "webpack --config webpack.config.js"
+    "test-build": "webpack ./src/index.js output.js --hide-modules",
+    "build": "webpack --config tools/webpack.config.js --hide-modules",
+    "build:watch": "webpack --config tools/webpack.config.js --watch --hide-modules",
+    "build:production": "webpack --config tools/webpack.config.js -p --hide-modules",
+    "lint": "eslint ./src --ext .js & exit 0"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/SlideWorx/backbone-virtual-list"
   },
   "keywords": [
-    "modal",
+    "virtual-list",
+    "virtual",
     "backbone"
   ],
   "author": "SlideWorx (http://slideworx.com/)",
@@ -21,16 +25,17 @@
     "url": "https://github.com/SlideWorx/backbone-virtual-list/issues"
   },
   "dependencies": {
+    "autoprefixer": "^6.5.2",
     "backbone": "^1.3.3",
-    "lodash": "^4.13.1"
-  },
-  "devDependencies": {
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
-    "node-sass": "^3.7.0",
-    "sass-loader": "^3.2.0",
+    "jquery": "^3.1.1",
+    "lodash": "^4.13.1",
+    "node-sass": "^3.11.2",
+    "postcss-loader": "^1.1.0",
+    "sass-loader": "^3.2.3",
     "style-loader": "^0.13.1",
     "text-loader": "0.0.1",
-    "webpack": "^1.13.1"
+    "webpack": "^1.13.3"
   }
 }

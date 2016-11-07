@@ -1,8 +1,7 @@
 module.exports = {
   extends: 'eslint:recommended',
   env: {
-    browser: true,
-    node: true
+    browser: true
   },
   globals: {
     require: true,
@@ -13,7 +12,8 @@ module.exports = {
     'no-multiple-empty-lines': [1, {
       max: 1
     }],
-    'one-var': ['error', 'never'],
+    'no-console': ['warn'],
+    'one-var': ['warn', 'never'],
     indent: [
       'warn',
       2
@@ -22,6 +22,11 @@ module.exports = {
       'error',
       'single'
     ],
+    'no-shadow': ['warn', {
+      builtinGlobals: true,
+      hoist: 'all',
+      allow: ['top', 'parent']
+    }],
     semi: [
       'error',
       'always'

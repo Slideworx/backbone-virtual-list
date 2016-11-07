@@ -1,13 +1,15 @@
-.virtual-list {
+.c-virtual-list {
   position: relative;
+  display: block;
 }
 
-.virtual-list__item {
+.c-virtual-list__item {
+  position: absolute;
   left: 0;
   right: 0;
 }
 
-.virtual-list__scroller {
+.c-virtual-list__expander {
   position: absolute;
   top: 0;
   left: 0;
