@@ -5,7 +5,7 @@ module.exports = {
    */
   virtualExpanderSet: function() {
     this.__expander = document.createElement('div');
-    this.__expander.className = 'c-virtual-list___expander';
+    this.__expander.className = 'c-virtual-list__expander';
     this.virtualExpanderSync();
   },
 

@@ -2,10 +2,9 @@ Backbone Virtual List
 ================
 
 This is an extendable Backbone View, which allows to efficiently display long list of elements by rendering only visible subset.
-The list will automatically update on item add/remove/reset/sort.
 
-## Build
-Run `npm run build:production` to build production version.
+## Requirements
+Library uses external dependencies: `lodash`, `backbone` and `jquery`. Make sure these are available through `require`.
 
 ## Example of usage
 You can create an instance of VirtualList:
@@ -49,6 +48,10 @@ instance.render();
 instance.appendTo(this.$el);
 ```
 
+## ItemView
+ItemView must be a class (unless You're overwriting `virtualGetView`, then whatever you want). Additionally, it must provide method `remove` that will be called to remove the view from the DOM and cleanup.
+For each ItemView, a private property `__itemViewCacheHidden` is set to track its state of visibility.
+
 ## Usage with filters
 The list will refresh when the collection will be reseted, sorted, items are added or removed.
 However, list will display all the items in collection, so marking them with some attribute will not work.
@@ -68,19 +71,3 @@ Methods `virtualExpanderSet`, `virtualExpanderSync`, `virtualExpanderRemove`,  `
 `virtualSetHeight` is used to set the current height of the view, in case the container height has changed. Just pass the new height of the virtual list.
 
 `virtualGetView` is method used to generate the itemView for the model. You can overwrite it to provide custom logic, however keep in mind that it's fired for every visible model and should add the view to cache.
-
-## Release History
-
-### 2.1.0 (07.11.2016)
-* Virtual list now accepts `itemView`, `itemHeight` and `listHeight` parameters in options.
-* Virtual list now can be instantiated without extending.
-
-### 2.0.0 (07.11.2016)
-* code split into smaller files,
-* view cache extracted into separate class,
-* added method for setting new height,
-* updated some methods,
-* updated readme.
-
-### 1.0.0 (14.07.2016)
-Initial release.
