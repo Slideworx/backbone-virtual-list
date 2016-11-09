@@ -8,10 +8,17 @@ function getHiddenIndexes(lastStartIndex, newStartIndex, itemCount) {
 module.exports = {
 
   /**
+   * Calculates first visible index in the viewport.
+   */
+  virtualGetFirstVisibleIndex: function() {
+    return Math.floor(this.el.scrollTop / this.itemHeight);
+  },
+
+  /**
    * Scrolls the list, showing item views that are in the viewport plus 3 items outside.
    */
   virtualScroll: function() {
-    var startIndex = Math.max(0, Math.floor(this.el.scrollTop / this.itemHeight) - 3);
+    var startIndex = Math.max(0, this.virtualGetFirstVisibleIndex() - 3);
     var count = Math.floor(this.listHeight / this.itemHeight) + 6;
     var endIndex = Math.min(this.collection.length, startIndex + count);
     this.virtualHideItems(startIndex, count);

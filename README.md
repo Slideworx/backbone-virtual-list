@@ -57,10 +57,9 @@ The list will refresh when the collection will be reseted, sorted, items are add
 However, list will display all the items in collection, so marking them with some attribute will not work.
 You need some cache (for example another collection) that will have all the items, and the collection passed to list will reset on filter with only filtered items.
 
-
 ## Custom scroll
 You'll probably want to use custom scroll. In that case, while extending the list, You have to specify methods: `setCustomScroll`, `updateCustomScroll`, `removeCustomScroll`.
-These methods will be automatically called when needed.
+These methods will be automatically called when needed. Additionaly, if Your scroll doesn't set scrollTop on the VirtualListView element, method `virtualGetFirstVisibleIndex` can now be overwritten to provide custom logic for calculating first visible index. This method can return negative numbers, but must always return a number.
 
 ## Base view methods
 Methods: `initialize`, `render`, `remove` are wrapped in extend, so You can just write Your own methods without worry that You'll overwrite some custom logic.
