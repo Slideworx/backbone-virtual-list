@@ -58,7 +58,8 @@ $('.js-add').on('click', function() {
   });
 });
 $('.js-add-1000').on('click', function() {
-  for (var i = list.collection.length; i < list.collection.length + 1000; i++) {
+  var startingIndex = list.collection.length;
+  for (var i = startingIndex; i < startingIndex + 1000; i++) {
     list.collection.add({
       label: 'Row ' + i,
       message: 'This is row no. ' + i
