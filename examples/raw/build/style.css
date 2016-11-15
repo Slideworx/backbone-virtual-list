@@ -1,0 +1,19 @@
+.c-virtual-list {
+  position: relative;
+  display: block; }
+
+.c-virtual-list__item {
+  position: absolute;
+  left: 0;
+  right: 0; }
+
+.c-virtual-list__expander {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px; }
+.c-virtual-list {
+  overflow: auto;
+  width: 20vw; }
