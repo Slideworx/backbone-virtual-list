@@ -1,0 +1,62 @@
+.m-perfect-scrollbar {
+	overflow: hidden;
+	position: relative;
+	&.ps-active-y{
+		//padding-right: 11px;
+	}
+}
+
+/* Perfect scrollbar css */
+
+.ps-scrollbar-x-rail,
+.ps-scrollbar-y-rail {
+  z-index: 4;
+}
+
+/* Custom stylesheet for plugin perfect scrollbar */
+
+.ps-container .ps-scrollbar-x-rail, .ps-container .ps-scrollbar-y-rail, .ps-container .ps-scrollbar-x, .ps-container .ps-scrollbar-y {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	position: absolute;
+}
+
+.ps-container .ps-scrollbar-x-rail {
+	background-color: #eee;
+	bottom: 3px; /* there must be 'bottom' for ps-scrollbar-x-rail */
+	height: 6px;
+}
+
+.ps-container .ps-scrollbar-y-rail {
+	background-color: #eee;
+	right: 3px; /* there must be 'right' for ps-scrollbar-y-rail */
+	width: 6px;
+}
+
+.ps-container .ps-scrollbar-x {
+	background-color: #ccc;
+	bottom: 0; /* there must be 'bottom' for ps-scrollbar-x */
+	height: 6px;
+}
+
+.ps-container .ps-scrollbar-y {
+	background-color: #ccc;
+	right: 0; /* there must be 'right' for ps-scrollbar-y */
+	width: 6px;
+}
+
+.ps-container:hover {
+	.ps-scrollbar-x,
+	.ps-scrollbar-y {
+		background-color: #ccf;
+	}
+}
+
+
+.ps-container.ie:hover .ps-scrollbar-x,
+.ps-container.ie:hover .ps-scrollbar-y,
+.ps-container.ie.hover .ps-scrollbar-x,
+.ps-container.ie.hover .ps-scrollbar-y {
+	visibility: visible;
+}

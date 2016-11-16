@@ -1,0 +1,9 @@
+.m-item-view {
+  background-color: rgba(150, 250, 200, .5);
+  display: flex;
+  justify-content: space-between;
+
+  > span {
+    padding: .25rem;
+  }
+}

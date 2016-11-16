@@ -5,7 +5,7 @@ var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var exampleRoot = path.join(__dirname, '..', 'examples', 'iScroll');
+var exampleRoot = path.join(__dirname, '..', 'examples');
 
 var webpackConfig = {
   devtool: '#eval',
