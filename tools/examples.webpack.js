@@ -5,13 +5,13 @@ var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var exampleRoot = path.join(__dirname, '..', 'examples');
+var exampleRoot = path.join(__dirname, '..', 'docs');
 
 var webpackConfig = {
   devtool: '#eval',
   entry: path.join(exampleRoot, 'src', 'index'),
   output: {
-    path: path.join(exampleRoot, 'build'),
+    path: path.join(exampleRoot),
     filename: 'main.js'
   },
   module: {

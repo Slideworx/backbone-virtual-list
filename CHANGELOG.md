@@ -1,9 +1,13 @@
 # Change log
 
+## 2.3.0 (2017.01.24)
+### Added
+* Docs with example of usage
+
 ## 2.2.0 (2016.11.09)
 
 ### Added
-Method `virtualGetFirstVisibleIndex` used to calculate first visible index can now be overwritten if custom scroll is used.
+* Method `virtualGetFirstVisibleIndex` used to calculate first visible index can now be overwritten if custom scroll is used.
 
 ## 2.1.1 (2016.11.09)
 
